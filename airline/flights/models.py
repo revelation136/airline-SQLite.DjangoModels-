@@ -3,6 +3,7 @@ from django.db import models
 
 # Create your models here.
 # !!!Note:everytime you make changes in models.py, you have to make migrations and then migrate
+# Creating objects is done on shell - python manage.py shell, don't forget to import this model in the shell
 
 class Airport(models.Model):
     code = models.CharField(max_length=3)
