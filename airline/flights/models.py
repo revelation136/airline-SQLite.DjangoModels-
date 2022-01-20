@@ -23,3 +23,15 @@ class Flight(models.Model):
     # related_name="" Which gives us a way to search for all flights with a given airport as their origin or destination
     def __str__(self):
         return f"{self.id}: {self.origin} to {self.destination}"
+
+
+class Passengers(models.Model):
+    first = models.CharField(max_length=64)
+    last = models.CharField(max_length=64)
+    flights = models.ManyToManyField(Flight, blank=True, related_name="passengers")
+
+    # ManyToMany is to define this class (Passengers) which means Passengers can have 1 or more flights
+    # argument blank=True which means a passenger can have no flights.
+
+    def __str__(self):
+        return f"{self.first} {self.last}"
