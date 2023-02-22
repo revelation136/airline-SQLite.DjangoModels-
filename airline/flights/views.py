@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect
 
 # Create your views here.
 
-def index(request):
+def xyz(request):
     return render(request, "flights/index.html", {
         "flights": Flight.objects.all()
     })

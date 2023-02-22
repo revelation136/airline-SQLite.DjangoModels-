@@ -21,6 +21,8 @@ class Flight(models.Model):
     # on_delete=models.CASCADE In this case, we specify that when an airport is deleted, all flights associated
     # with it should be also deleted.
     # related_name="" Which gives us a way to search for all flights with a given airport as their origin or destination
+
+    # to fix query view from shell. we add formatted string for more detailed object
     def __str__(self):
         return f"{self.id}: {self.origin} to {self.destination}"
 
